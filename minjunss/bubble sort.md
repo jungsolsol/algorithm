@@ -38,4 +38,33 @@ public class Solution {
     }
 }
 ```
+
+## 다시푼거
+```java
+import java.util.*;
+
+public class Solution {
+    public int[] bubbleSort(int[] arr) {
+        for(int i=0; i<arr.length-1; i++) {
+            int count = 0;
+                for (int j = 0; j < arr.length - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        swap(arr, j, j + 1);
+                        count++;
+                    }
+                }
+            if(count == 0) break;
+        }
+        return arr;
+    }
+    static int[] swap(int[] arr, int one, int two) {
+        int a = arr[one];
+        int b = arr[two];
+        arr[one] = b;
+        arr[two] = a;
+        return arr;
+    }
+}
+```
  ### 실행시간 초과 나옴 내일 다시 (6/24)
+ ### Arrays.copyOf가 시간이 오래걸린거 같음. 위치를 바꾸기만 하는 메서드로 변경 후 메서드 실행 횟수를 체크하는 방식으로 품
